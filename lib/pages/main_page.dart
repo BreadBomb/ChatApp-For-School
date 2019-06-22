@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'chat.dart';
+import 'create_room.dart';
+import 'join_room.dart';
+
 class MainPage extends StatefulWidget {
   MainPage({Key key, this.title}) : super(key: key);
 
@@ -24,7 +28,9 @@ class _MainPageState extends State<MainPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               new RaisedButton(
-                onPressed: () => {},
+                onPressed: () => {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => JoinRoomPage()))
+                },
                 child: new Icon(Icons.chat, size: 50.0),
                 shape: CircleBorder(),
                 padding: EdgeInsets.all(15.0),
@@ -52,7 +58,9 @@ class _MainPageState extends State<MainPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               new RaisedButton(
-                  onPressed: () => {},
+                  onPressed: () => {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => CreateRoomPage()))
+                  },
                   child: new Icon(Icons.add, size: 50.0),
                   shape: CircleBorder(),
                   padding: EdgeInsets.all(15.0),
